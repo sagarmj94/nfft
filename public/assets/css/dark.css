@@ -1,0 +1,252 @@
+ body.dark {
+  background: #0f1112;
+  color: #f6f6f6;
+}
+.dark .topbar .topbar-left{
+  background-color: #1d2125;
+}
+.dark .side-menu{
+  background: #1d2125;
+}
+.dark #sidebar-menu > ul > li > a{
+  color: #ffffff;
+}
+.dark .button-menu-mobile{
+  background: #1d2125;
+}
+.dark .topbar .navbar-custom{
+  background: #1d2125;
+}
+.dark .nav-user p{
+  color: #f6f6f6;
+}
+.dark .footer{
+  background: #1d2125;
+}
+.dark .card.card-normal{
+  background: #1d2125;
+}
+.dark .table{
+  color: #878787;
+}
+.dark .nft-list-tem{
+  background: #1d2125;
+}
+.dark .text-black {
+    color: #e1e1e1;
+}
+.dark .text-light-grey {
+    color: #878787;
+}
+.dark .table td, .dark  .table th{
+  border-top: 1px solid #3b4046;
+}
+.dark .table thead th{
+  border-bottom: 2px solid #3b4046;
+}
+.dark .table-hover tbody tr:hover, .dark .table-striped tbody tr:nth-of-type(odd), .dark .thead-default th {
+    background-color: #1d2125;
+    color: #ffffff;
+}
+.dark .button-menu-mobile img{
+  filter: brightness(5);
+}
+.dark .transactions-tabs .nav-tabs .nav-link, .dark .mywallet-tab .nav-tabs .nav-link{
+  color: #e1e1e1;
+}
+.dark .card{
+  box-shadow: 0px 0px 20px rgb(0 0 0 / 5%);
+}
+.dark .nft-page .nft-list-tem {
+    background: #0e1011;
+}
+.dark .form-select.form-control {
+    background-color: #32373c;
+    border-color: #32373c;
+    color: #efefef;
+}
+.dark .form-control {
+    background-color: #32373c;
+    border-color: #32373c;
+    color: #efefef;
+}
+.dark .form-control:focus {
+    border-color: #454c52;
+}
+.dark hr{
+  border-top: 1px solid rgb(112 112 112 / 30%);
+}
+.dark .invoice-item + .invoice-item {
+    border-top: 1px solid #2c2c2c;
+}
+.dark .invoice-addnew .bg-light {
+    background-color: #24282c !important
+}
+.dark .btn-theme-light {
+    background-color: transparent;
+    border-color: #ffab2d;
+    color: #ffab2d;
+}
+.dark .btn-theme-light:hover {
+    background-color: #ffab2d;
+    border-color: #ffab2d;
+    color: #1d2125 !important;
+}
+.dark .btn-theme-outline {
+    background-color: transparent;
+    border-color: #ffab2d;
+    color: #ffab2d;
+}
+.dark .btn-theme-outline:hover {
+    background-color: #ffab2d;
+    border-color: #ffab2d;
+    color: #212529;
+}
+.dark .price-top:after {
+    border: 2px solid #ffab2d;
+}
+.dark .btn-theme {
+    background-color: transparent;
+    border-color: #ffab2d;
+    color: #ffab2d;
+}
+.dark .btn-theme:hover {
+    background-color: #ffab2d;
+    border-color: #ffab2d;
+    color: #1d2125 ;
+}
+.dark .bg-success {
+    color: #ffffff !important;
+}
+.dark .list-group-item{
+  background: transparent;
+}
+.dark .content-page .pricing-col, .dark .subscription-page .pricing-col  {
+  background-color: #0e1011;
+  border: 1px solid #0e1011;
+  color: #e1e1e1;
+}
+.dark .pagination .page-link {
+    background: #2c3136;
+    border-color: #16191c;
+    color: #fff;
+}
+.dark .wallet-item{
+  background: #000;
+}
+.dark .wallet-item a{
+  color: #bfbfbf;
+}
+.dark .wallet-item a:hover{
+  color: #0056b3;
+}
+.dark.connect-wallet-page{
+  background: #000 !important;
+}
+.dark.connect-wallet-page .accountbg{
+  display: none;
+}
+.dark.connect-wallet-page .card-pages{
+  background: #0f1112;
+}
+.dark .profile-dropdown{
+  background-color: #1d2125;
+  border-color: #1d2125;
+  box-shadow: none;
+}
+.dark .profile-dropdown .dropdown-item{
+  background-color: #1d2125;
+  color: #e1e1e1;
+}
+.dark .profile-dropdown .dropdown-item:hover{
+  color: #413fbb;
+}
+.dark .theme-mode-button{
+  background-color: #ed8316;
+  border-color: #ed8316;
+}   
+.dark #sidebar-menu > ul > li > a:hover,
+.dark #sidebar-menu > ul > li > a:focus,
+.dark #sidebar-menu > ul > li > a:active {
+    color: #ffab2d;
+}
+.dark .transactions-tabs .nav-tabs .nav-link.active,
+.dark .mywallet-tab .nav-tabs .nav-link.active {
+    color: #0f1112;
+    background: #ffab2d;
+    border-color: #ffab2d;
+}
+.dark .page-item.active .page-link {
+    background-color: #ffab2d;
+    border-color: #ffab2d;
+}
+.dark .year-dropdown {
+  background-color: #0e1011;
+  color: #fff;
+}
+@media only screen and (max-width: 767px){
+  .dark.enlarged .button-menu-mobile {
+      background: transparent !important;
+  }
+  .dark .button-menu-mobile {
+      background-color: #ed8316  !important;
+  }
+}
+
+.dark .text-dark {
+  color: #a5a5a5 !important;
+}
+.dark .taxreport-page .border {
+  border: 1px solid #565656!important;
+}
+.dark .text-theme-color {
+    color: #ffab2d;
+}
+.dark.enlarged #wrapper .left.side-menu #sidebar-menu > ul > li > a:hover, 
+.dark.enlarged #wrapper .left.side-menu #sidebar-menu > ul > li > a:active, 
+.dark.enlarged #wrapper .left.side-menu #sidebar-menu > ul > li > a:focus {
+    background-color: #ffab2d;
+    color: #000;
+}
+.dark .btn-link{
+  color: #ffab2d;
+}
+.dark .modal-content{
+  background-color: #1d2125;
+}
+.dark .modal-backdrop.show {
+  opacity: .90;
+}
+.dark .btn-fill-dark{
+  background-color: #ffab2d;
+  border-color: #ffab2d;
+  color: #1d2125;
+  box-shadow: none !important;
+}
+.dark .btn-fill-dark:hover{
+  background-color: #ed8316;
+  border-color: #ed8316;
+  color: #000;
+}
+.dark #sidebar-menu .submenu li.mm-active a{
+  background-color: #0c0c0c;
+  color: #ffab2d;
+}
+.dark #sidebar-menu .submenu li a{
+  background-color: #0c0c0c;
+  color: #fff;
+}
+.dark #sidebar-menu .submenu li a:hover{
+  background-color: #0c0c0c !important;
+  color: #ffab2d;
+}
+.dark.enlarged #wrapper .left.side-menu #sidebar-menu > ul > li:hover > a{
+  background-color: #ffab2d;
+  color: #000;
+}
+.dark.enlarged #wrapper #sidebar-menu ul ul{
+  background-color: #0c0c0c;
+}
+.dark.enlarged #wrapper .left.side-menu #sidebar-menu > ul > li:hover > ul a:hover{
+  color: #ffab2d;
+}
