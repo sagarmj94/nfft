@@ -774,7 +774,7 @@ const Dashboard = () => {
 														})
 													)}
 													{txn?.length <= 0 &&
-													txnData.length <= 0 &&
+													txnData?.length <= 0 &&
 													txnLoading === false ? (
 														<tr>
 															<td colSpan={7} style={{ border: "none" }}>
