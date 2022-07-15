@@ -111,19 +111,16 @@ const Dashboard = () => {
 			})
 	}
 
-	console.log("how to txn", txn)
-	console.log("how to txnLoading", txnLoading)
-	console.log("how to !txnData", txnData)
+
 
 	const getTransection = () => {
 		setTxnLoading(true)
 		var config = {
 			method: "get",
-			url: `https://testnets-api.opensea.io/v1/events?account_address=${userData?.address}&only_opensea=true&limit=199`,
+			url: `https://testnets-api.opensea.io/api/v1/events?account_address=${userData?.address}&only_opensea=true&limit=200`,
 			// url: `/api/v1/events?account_address=0xC43B7EF54260F9115260e9d2a6132B8Ce73d703b&only_opensea=true&limit=300`,
 			// url: "https:testnets-api.opensea.io/api/v1/events?account_address=0xc9b01E19c8b6130CEF11598Ff83e00452E00e14E&only_opensea=false&limit=200",
 		}
-
 		axios(config)
 			.then(function (response) {
 				setTxn(response?.data?.asset_events)
@@ -131,11 +128,9 @@ const Dashboard = () => {
 				setTxnLoading(false)
 			})
 			.catch(function (error) {
-				// setTxnLoading(true)
-				setTxn(txnData)
-				console.log("Txn data display from redux")
+				setTxnLoading(true)
+				setTxn(txnData ? txnData : [])
 				setTxnLoading(false)
-				// setTxnError(false)
 			})
 	}
 
@@ -157,7 +152,7 @@ const Dashboard = () => {
 				setTxnLoading(true)
 				setTxn(txnData)
 				setTxnLoading(false)
-				console.log("Txn data display from redux")
+				//e.log("Txn data display from redux")
 				// setTxnError("Something went wrong")
 			})
 	}
@@ -183,7 +178,8 @@ const Dashboard = () => {
 				setNftLoading(false)
 			})
 			.catch(function (error) {
-				setNft(nftData)
+				// setNft(nftData)
+				setNft([])
 				setNftLength(nftData?.length)
 				setNftLoading(false)
 				console.log("Nft data display from redux")
@@ -236,7 +232,7 @@ const Dashboard = () => {
 			// getTransection()
 		} else localStorage.setItem("wallet-address", "false")
 	}, [userData?.address])
-
+	console.log(txnData, "------------------>")
 	return (
 		<>
 			<Header />
@@ -672,10 +668,7 @@ const Dashboard = () => {
 													</tr>
 												</thead>
 												<tbody>
-													{txn?.length <= 0 &&
-													txnData &&
-													txnLoading === false ? (
-														// {txn?.length <= 0 ? (
+													{txnData?.length <= 0 && txnLoading === false ? (
 														<tr>
 															<td colSpan={7}>
 																<h5
@@ -777,9 +770,7 @@ const Dashboard = () => {
 													{/* {txn?.length <= 0 &&
 													txnData.length <= 0 &&
 													txnLoading === false ? ( */}
-													{txn?.length <= 0 &&
-													!txnData &&
-													nftLoading === false ? (
+													{txnData?.length <= 0 && txnLoading === false ? (
 														<tr>
 															<td colSpan={7} style={{ border: "none" }}>
 																<p className='text-center mb-3'>
