@@ -26,15 +26,13 @@ function Layout() {
 	const ethereum = window.ethereum
 	const address = localStorage.getItem("wallet-address")
 
-
-	window.onbeforeunload = function (e) {
-		localStorage.clear()
-	}
+	// window.onbeforeunload = function (e) {
+	// 	localStorage.clear()
+	// }
 
 	useEffect(() => {
 		GetWalletDetails(ethereum, dispatch)
 	}, [ethereum])
-
 
 	return (
 		<>

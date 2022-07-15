@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
-import {} from "react-redux"
+import { walletConnectRequestSuccess } from "../redux/actions/WalletActions"
+
 const Protected = ({ Component }) => {
 	const wallletData = useSelector((state) => state.walletReducer.userData)
 
 	const navigate = useNavigate()
-
+	const dispatch = useDispatch()
 	useEffect(() => {
 		// const address = localStorage.getItem("wallet-address")
 		const address = wallletData?.address
@@ -16,23 +17,13 @@ const Protected = ({ Component }) => {
 		// 	(address === "false" && wallletData?.address === "") ||
 		// 	wallletData?.address === null ||
 		// 	wallletData?.address === undefined
-		if (address === "") {
+		if (address.length < 3) {
 			// <Navigate to={'/connect-wallet'} />
 			navigate("/connect-wallet")
 		} else {
 			return Component
 		}
 	}, [])
-
-	window.addEventListener("beforeunload", () => {
-		localStorage.removeItem("wallet-address")
-		dispatch(
-			walletConnectRequestSuccess({
-				address: "",
-				balance: 0,
-			})
-		)
-	})
 
 	return (
 		<div>
