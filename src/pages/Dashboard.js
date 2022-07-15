@@ -51,6 +51,8 @@ const Dashboard = () => {
 	const nftData = useSelector((state) => state.NftReducer.nftData)
 	const txnData = useSelector((state) => state.TxnReducer.txnData)
 
+
+
 	const getTopCollectionData = () => {
 		setIsCollLoading(true)
 		var config = {
@@ -119,7 +121,6 @@ const Dashboard = () => {
 			// url: `/api/v1/events?account_address=0xC43B7EF54260F9115260e9d2a6132B8Ce73d703b&only_opensea=true&limit=300`,
 			// url: "https:testnets-api.opensea.io/api/v1/events?account_address=0xc9b01E19c8b6130CEF11598Ff83e00452E00e14E&only_opensea=false&limit=200",
 		}
-
 		axios(config)
 			.then(function (response) {
 				setTxn(response?.data?.asset_events)
@@ -141,7 +142,6 @@ const Dashboard = () => {
 			url: `https://testnets-api.opensea.io/api/v1/events?account_address=${userData?.address}&only_opensea=true&limit=200`,
 			// url: "https:testnets-api.opensea.io/api/v1/events?account_address=0xc9b01E19c8b6130CEF11598Ff83e00452E00e14E&only_opensea=false&limit=200",
 		}
-
 		axios(config)
 			.then(function (response) {
 				setTxn(response?.data?.asset_events)
@@ -224,6 +224,7 @@ const Dashboard = () => {
 				setNftLoading(false)
 			}, 4000)
 			setTimeout(() => {
+				setTxnLoading(true)
 				getTransection()
 				setTxnLoading(false)
 			}, 4500)
@@ -232,6 +233,12 @@ const Dashboard = () => {
 		} else localStorage.setItem("wallet-address", "false")
 	}, [userData?.address])
 
+
+
+
+
+
+	
 	return (
 		<>
 			<Header />
