@@ -231,14 +231,13 @@ useEffect(() => {
 		localStorage.setItem("wallet-address", "true")
 		setTimeout(() => {
 			getNftData()
-			getTransection()
 			setNftLoading(false)
 		}, 4000)
-		// setTimeout(() => {
-		// 	setIstTxLoad(true)
-		// 	getTransection()
-		// 	setTxnLoading(false)
-		// }, 4000)
+		setTimeout(() => {
+			setIstTxLoad(true)
+			getTransection()
+			setTxnLoading(false)
+		}, 4000)
 		getTopCollectionData()
 		getTransection()
 	} else localStorage.setItem("wallet-address", "false")
