@@ -51,8 +51,6 @@ const Dashboard = () => {
 	const nftData = useSelector((state) => state.NftReducer.nftData)
 	const txnData = useSelector((state) => state.TxnReducer.txnData)
 
-
-
 	const getTopCollectionData = () => {
 		setIsCollLoading(true)
 		var config = {
@@ -113,14 +111,18 @@ const Dashboard = () => {
 			})
 	}
 
+	console.log("how to txn", txn)
+	console.log("how to txnLoading", txnLoading)
+
 	const getTransection = () => {
 		setTxnLoading(true)
 		var config = {
 			method: "get",
-			url: `https://testnets-api.opensea.io/api/v1/events?account_address=${userData?.address}&only_opensea=true&limit=300`,
+			url: `/v1/events?account_address=${userData?.address}&only_opensea=true&limit=199`,
 			// url: `/api/v1/events?account_address=0xC43B7EF54260F9115260e9d2a6132B8Ce73d703b&only_opensea=true&limit=300`,
 			// url: "https:testnets-api.opensea.io/api/v1/events?account_address=0xc9b01E19c8b6130CEF11598Ff83e00452E00e14E&only_opensea=false&limit=200",
 		}
+
 		axios(config)
 			.then(function (response) {
 				setTxn(response?.data?.asset_events)
@@ -142,6 +144,7 @@ const Dashboard = () => {
 			url: `https://testnets-api.opensea.io/api/v1/events?account_address=${userData?.address}&only_opensea=true&limit=200`,
 			// url: "https:testnets-api.opensea.io/api/v1/events?account_address=0xc9b01E19c8b6130CEF11598Ff83e00452E00e14E&only_opensea=false&limit=200",
 		}
+
 		axios(config)
 			.then(function (response) {
 				setTxn(response?.data?.asset_events)
@@ -149,6 +152,7 @@ const Dashboard = () => {
 				setTxnLoading(false)
 			})
 			.catch(function (error) {
+				// setTxnLoading(true)
 				setTxn(txnData)
 				console.log("Txn data display from redux")
 				setTxnLoading(false)
@@ -200,7 +204,6 @@ const Dashboard = () => {
 			.then(function (response) {
 				setColData(response?.data)
 				// dispatch(CollectionAction.userLoadSucess(response?.data))
-
 				setColDataEmpty(response?.data?.length)
 				setIsCollLoading(false)
 			})
@@ -224,7 +227,6 @@ const Dashboard = () => {
 				setNftLoading(false)
 			}, 4000)
 			setTimeout(() => {
-				setTxnLoading(true)
 				getTransection()
 				setTxnLoading(false)
 			}, 4500)
@@ -233,12 +235,6 @@ const Dashboard = () => {
 		} else localStorage.setItem("wallet-address", "false")
 	}, [userData?.address])
 
-
-
-
-
-
-	
 	return (
 		<>
 			<Header />
@@ -674,7 +670,9 @@ const Dashboard = () => {
 													</tr>
 												</thead>
 												<tbody>
-													{txn?.length <= 0 && txnData.length <= 0 ? (
+													{txn?.length <= 0 &&
+													txnData.length <= 0 &&
+													txnLoading === false ? (
 														// {txn?.length <= 0 ? (
 														<tr>
 															<td colSpan={7}>
@@ -774,9 +772,10 @@ const Dashboard = () => {
 															)
 														})
 													)}
-													{txn?.length <= 0 &&
+													{/* {txn?.length <= 0 &&
 													txnData.length <= 0 &&
-													txnLoading === false ? (
+													txnLoading === false ? ( */}
+													{txn?.length <= 0 ? (
 														<tr>
 															<td colSpan={7} style={{ border: "none" }}>
 																<p className='text-center mb-3'>
