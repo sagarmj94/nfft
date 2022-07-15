@@ -1,15 +1,14 @@
 /** @format */
 
 import { lazy, Suspense, useEffect } from "react"
-import { Routes, Route, Navigate, useNavigate } from "react-router-dom"
-import { useDispatch, useSelector } from "react-redux"
+import { Routes, Route } from "react-router-dom"
+import { useDispatch } from "react-redux"
 import InvoiceDetail from "./pages/InvoiceDetail"
 import InvoiceAddnew from "./pages/InvoiceAddnew"
 import Loading from "react-loading"
 import { GetWalletDetails } from "./utils/GetWalletDetails"
 import Protected from "./helper/Protected"
 import TaxReport from "./pages/TaxReport"
-
 
 const Dashboard = lazy(() => import("./pages/Dashboard"))
 const MyWallet = lazy(() => import("./pages/MyWallet"))
@@ -22,14 +21,10 @@ const Settings = lazy(() => import("./pages/Settings"))
 const ChangeSubscription = lazy(() => import("./pages/ChangeSubscription"))
 const ConnectWallet = lazy(() => import("./pages/ConnectWallet"))
 
-
 function Layout() {
-	// wallletData = useSelector((state) => state.walletReducer.userData)
-	// const navigate = useNavigate();
 	const dispatch = useDispatch()
 	const ethereum = window.ethereum
 	const address = localStorage.getItem("wallet-address")
-
 
 	useEffect(() => {
 		GetWalletDetails(ethereum, dispatch)
@@ -39,65 +34,60 @@ function Layout() {
 			<Suspense
 				fallback={
 					<div className='loader-wrapper'>
-						<Loading
-							type='spin'
-							color='#ffab2d'
-							height={100}
-							width={100}
-						/>
+						<Loading type='spin' color='#ffab2d' height={100} width={100} />
 					</div>
 				}
 			>
 				<div id='wrapper'>
-
 					<Routes>
 						<Route path='/' element={<Protected Component={Dashboard} />} />
-						{/* {address === "true" ?
-								<Redirect  to="/" />
-								: <Redirect  to="/connect-wallet" />} */}
-						<Route path='/mywallet' element={<Protected Component={MyWallet} />} />
-						<Route path='/transactions' element={<Protected Component={Transection} />} />
-						<Route path='/collections' element={<Protected Component={Collection} />} />
-						<Route path='/portfolio' element={<Protected Component={Portfolio} />} />
-						<Route path='/invoices' element={<Protected Component={Invoices} />} />
+						<Route
+							path='/mywallet'
+							element={<Protected Component={MyWallet} />}
+						/>
+						<Route
+							path='/transactions'
+							element={<Protected Component={Transection} />}
+						/>
+						<Route
+							path='/collections'
+							element={<Protected Component={Collection} />}
+						/>
+						<Route
+							path='/portfolio'
+							element={<Protected Component={Portfolio} />}
+						/>
+						<Route
+							path='/invoices'
+							element={<Protected Component={Invoices} />}
+						/>
 						<Route
 							path='/profit-tracker'
 							element={<Protected Component={ProfitTracker} />}
-						/> 						<Route path='/settings' element={<Protected Component={Settings} />} />
-
+						/>{" "}
 						<Route
-
+							path='/settings'
+							element={<Protected Component={Settings} />}
+						/>
+						<Route
 							path='/invoice-detail'
 							element={<Protected Component={InvoiceDetail} />}
 						/>
 						<Route
-
 							path='/tax-report'
 							element={<Protected Component={TaxReport} />}
 						/>
+						<Route path='/invoice-addnew' element={<InvoiceAddnew />} />
 						<Route
-
-							path='/invoice-addnew'
-							element={<InvoiceAddnew />}
-						/>
-						<Route
-
 							path='/change-subscription'
 							element={<Protected Component={ChangeSubscription} />}
 						/>
 						<Route
-
 							path='/connect-wallet'
 							element={<Protected Component={ConnectWallet} />}
 						/>
-						<Route
-
-							path='/connect-wallet'
-							element={<ConnectWallet />}
-						/>
-
+						<Route path='/connect-wallet' element={<ConnectWallet />} />
 					</Routes>
-
 				</div>
 			</Suspense>
 		</>
@@ -105,16 +95,3 @@ function Layout() {
 }
 
 export default Layout
-
-
-// var ss = true
-// export const Protected = ({ children }) => {
-// 	const navigate = useNavigate();
-// 	// if (localStorage.getItem("wallet-address") === "true") {
-// 	if (!ss === true) {
-// 		// console.log("children", localStorage.getItem("wallet-address"))
-// 		return children
-// 	} else {
-// 		return <Navigate to="/wallet-address" />;
-// 	}
-// }

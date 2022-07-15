@@ -199,19 +199,6 @@ const Transection = () => {
 																	<td className='font-weight-600'>
 																		{getPrice(topTxn, wallletData?.address)} ETH
 																	</td>
-																	{/* <td className='text-success'>
-																		<i className='mdi mdi-arrow-up mr-2'></i>250
-																		ETH
-																	</td> */}
-																	{/* <td className='text-success'>
-																		{topTxn?.event_type === "successful"
-																			? getProfitLoss(
-																					topTxn,
-																					currentTableData,
-																					topTxn?.collection_slug
-																			  )
-																			: "--"}
-																	</td> */}
 
 																	<GetGas
 																		hash={

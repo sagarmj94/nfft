@@ -85,10 +85,6 @@ const Header = () => {
 									<p className='d-none d-md-inline-block'>
 										Fred Aston <span>aston@gmail.com</span>
 									</p>
-									{/* <p className='d-none d-md-inline-block'>
-										{loginUser?.name} <span>{loginUser?.email}
-										</span>
-									</p> */}
 
 									<img
 										// src={userData && userData?.seller?.profile_img_url}

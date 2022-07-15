@@ -46,18 +46,10 @@ const Dashboard = () => {
 	const [txn, setTxn] = useState([])
 	const [txnError, setTxnError] = useState("")
 	const [txnLoading, setTxnLoading] = useState(false)
-	// const [addHeight, setAddHeight] = useState("0px")
 	const ethereum = window.ethereum
 	const colectData = useSelector((state) => state.CollectionReducer.colData)
 	const nftData = useSelector((state) => state.NftReducer.nftData)
 	const txnData = useSelector((state) => state.TxnReducer.txnData)
-
-
-	console.log("txnLoading", txnLoading)
-	// console.log("nft length", nft.length)
-	// console.log("colectData length", colectData.length)
-	// console.log("nftData length", nftData.length)
-	// console.log("txnData length", txnData.length)
 
 	const getTopCollectionData = () => {
 		setIsCollLoading(true)
@@ -413,7 +405,6 @@ const Dashboard = () => {
 															)
 															?.slice(0, 5)
 															?.map((item, id) => {
-																// console.log("item collec", item)
 																return (
 																	<tr key={id}>
 																		<td>
@@ -514,12 +505,6 @@ const Dashboard = () => {
 						<section>
 							<h2 className='header-title'>Most Valuable NFTs</h2>
 							<div className='row'>
-								{/* <p style={{ color: "red" }}>
-									{nftLength === 0 && nftData.length === 0
-										? "Collection Not Found"
-										: ""}
-								</p> */}
-
 								{nftLoading ? (
 									<div className='common-loader'>
 										<Loading
@@ -569,7 +554,6 @@ const Dashboard = () => {
 															<img
 																alt=''
 																src={topNft?.image_url}
-																// src='assets/images/nft-list-img-1.png'
 																className='img-fluid w-100'
 															/>
 														</div>
@@ -591,11 +575,9 @@ const Dashboard = () => {
 																		: ""}
 																</p>
 																<h4 className='font-20 font-weight-700 text-black d-flex align-items-center my-0 '>
-																	{/* {console.log("nft", topNft)} */}
 																	<img
 																		alt=''
 																		width='15'
-																		// src='assets/images/etherium-list-ic-1.png'
 																		src={
 																			topNft?.sell_orders &&
 																			Array?.isArray(topNft?.sell_orders) &&

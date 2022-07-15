@@ -13,11 +13,9 @@ import { useNavigate } from 'react-router-dom';
 const ChangeSubscription = () => {
 	const [selectPlan, setSelectPlan] = useState()
 	const dispatch = useDispatch()
-	// const history = useHistory()
 	const navigate = useNavigate();
 	const subscription = useSelector((state) => state.planReducer)
 
-	// console.log("Chnage Subscription Page", subscription)
 
 	const getPlans = () => {
 		var config = {
