@@ -672,7 +672,7 @@ const Dashboard = () => {
 												</thead>
 												<tbody>
 													{txn?.length <= 0 &&
-													txnData?.length <= 0 &&
+													!txnData &&
 													txnLoading === false ? (
 														// {txn?.length <= 0 ? (
 														<tr>
@@ -773,9 +773,10 @@ const Dashboard = () => {
 															)
 														})
 													)}
-													{txn?.length <= 0 &&
-													txnData?.length <= 0 &&
-													txnLoading === false ? (
+													{/* {txn?.length <= 0 &&
+													txnData.length <= 0 &&
+													txnLoading === false ? ( */}
+													{txn?.length <= 0 && nftLoading === false ? (
 														<tr>
 															<td colSpan={7} style={{ border: "none" }}>
 																<p className='text-center mb-3'>
