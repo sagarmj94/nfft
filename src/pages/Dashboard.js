@@ -118,7 +118,7 @@ const Dashboard = () => {
 		setTxnLoading(true)
 		var config = {
 			method: "get",
-			url: `/v1/events?account_address=${userData?.address}&only_opensea=true&limit=199`,
+			url: `https://testnets-api.opensea.io/v1/events?account_address=${userData?.address}&only_opensea=true&limit=199`,
 			// url: `/api/v1/events?account_address=0xC43B7EF54260F9115260e9d2a6132B8Ce73d703b&only_opensea=true&limit=300`,
 			// url: "https:testnets-api.opensea.io/api/v1/events?account_address=0xc9b01E19c8b6130CEF11598Ff83e00452E00e14E&only_opensea=false&limit=200",
 		}
@@ -130,6 +130,7 @@ const Dashboard = () => {
 				setTxnLoading(false)
 			})
 			.catch(function (error) {
+				setTxnLoading(true)
 				setTxn(txnData)
 				console.log("Txn data display from redux")
 				setTxnLoading(false)
@@ -152,10 +153,10 @@ const Dashboard = () => {
 				setTxnLoading(false)
 			})
 			.catch(function (error) {
-				// setTxnLoading(true)
+				setTxnLoading(true)
 				setTxn(txnData)
-				console.log("Txn data display from redux")
 				setTxnLoading(false)
+				console.log("Txn data display from redux")
 				// setTxnError("Something went wrong")
 			})
 	}
