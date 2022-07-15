@@ -17,7 +17,7 @@ const Protected = ({ Component }) => {
 		// 	(address === "false" && wallletData?.address === "") ||
 		// 	wallletData?.address === null ||
 		// 	wallletData?.address === undefined
-		if (address.length < 3) {
+		if (address?.length < 3) {
 			// <Navigate to={'/connect-wallet'} />
 			navigate("/connect-wallet")
 		} else {

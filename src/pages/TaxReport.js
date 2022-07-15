@@ -12,7 +12,7 @@ const TaxReport = () => {
     const [user, setUser] = useState("")
     const [mode, setMode] = useState(document.body.className)
     const [error, setError] = useState()
-    const loginUser = user[user.length - 1]
+    const loginUser = user[user?.length - 1]
     const wallletData = useSelector((state) => state.walletReducer.userData)
     const userData = useSelector((state) => state.TxnReducer.txnData)
 

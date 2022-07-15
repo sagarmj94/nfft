@@ -385,7 +385,7 @@ const Dashboard = () => {
 															</td>
 														</tr>
 													) : colData?.length <= 0 &&
-													  colectData.length <= 0 &&
+													  colectData?.length <= 0 &&
 													  isCollLoading === false ? (
 														<tr>
 															<td colSpan={7}>
@@ -477,7 +477,7 @@ const Dashboard = () => {
 															})
 													)}
 													{colData?.length <= 0 &&
-													colectData.length <= 0 &&
+													colectData?.length <= 0 &&
 													isCollLoading === false ? (
 														<tr>
 															<td colSpan={7} style={{ border: "none" }}>
@@ -519,7 +519,7 @@ const Dashboard = () => {
 										/>
 									</div>
 								) : nft?.length <= 0 &&
-								  nftData.length <= 0 &&
+								  nftData?.length <= 0 &&
 								  nftLoading === false ? (
 									<div className='col-md-12'>
 										<h5
@@ -610,7 +610,7 @@ const Dashboard = () => {
 								)}
 							</div>
 							{nft?.length <= 0 &&
-							nftData.length <= 0 &&
+							nftData?.length <= 0 &&
 							nftLoading === false ? (
 								<p className='text-center mt-5 mb-5 pb-3'>
 									<button
@@ -672,7 +672,7 @@ const Dashboard = () => {
 												</thead>
 												<tbody>
 													{txn?.length <= 0 &&
-													txnData.length <= 0 &&
+													txnData?.length <= 0 &&
 													txnLoading === false ? (
 														// {txn?.length <= 0 ? (
 														<tr>
@@ -773,10 +773,9 @@ const Dashboard = () => {
 															)
 														})
 													)}
-													{/* {txn?.length <= 0 &&
+													{txn?.length <= 0 &&
 													txnData.length <= 0 &&
-													txnLoading === false ? ( */}
-													{txn?.length <= 0 ? (
+													txnLoading === false ? (
 														<tr>
 															<td colSpan={7} style={{ border: "none" }}>
 																<p className='text-center mb-3'>

@@ -262,7 +262,7 @@ const Transection = () => {
 										<Pagination
 											className='pagination-bar'
 											currentPage={currentPage}
-											totalCount={txn.length}
+											totalCount={txn?.length}
 											pageSize={PageSize}
 											portFolio={txn}
 											onPageChange={(page) => setCurrentPage(page)}

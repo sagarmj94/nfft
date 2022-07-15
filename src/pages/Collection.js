@@ -101,7 +101,7 @@ const Collection = () => {
 													<td colSpan='8'>
 														<div
 															className='common-loader my-5'
-														// style={{ backgroundColor: "red" }}
+															// style={{ backgroundColor: "red" }}
 														>
 															<Loading
 																type='spin'
@@ -237,7 +237,7 @@ const Collection = () => {
 								<Pagination
 									className='pagination-bar'
 									currentPage={currentPage}
-									totalCount={data.length}
+									totalCount={data?.length}
 									pageSize={PageSize}
 									portFolio={data}
 									onPageChange={(page) => setCurrentPage(page)}
