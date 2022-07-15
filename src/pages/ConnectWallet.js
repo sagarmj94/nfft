@@ -51,9 +51,6 @@ const ConnectWallet = () => {
 
 	useEffect(() => {
 		GetWalletDetails(ethereum, dispatch)
-		return () => {
-			localStorage.setItem("wallet-address", "false")
-		}
 	}, [ethereum])
 
 	useEffect(() => {

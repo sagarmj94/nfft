@@ -385,12 +385,12 @@ const Dashboard = () => {
 													  isCollLoading === false ? (
 														<tr>
 															<td colSpan={7}>
-																<p
+																<h5
 																	class='text-center mt-3 mb-0'
 																	style={{ color: "rgb(201, 89, 89)" }}
 																>
 																	Sorry! No response was received from OpenSea!
-																</p>
+																</h5>
 															</td>
 														</tr>
 													) : isError ? (
@@ -518,12 +518,12 @@ const Dashboard = () => {
 								  nftData.length <= 0 &&
 								  nftLoading === false ? (
 									<div className='col-md-12'>
-										<p
+										<h5
 											className='text-center mt-3 mb-0 danger'
 											style={{ color: "rgb(201, 89, 89)" }}
 										>
 											Sorry! No response was received from OpenSea!
-										</p>
+										</h5>
 									</div>
 								) : nftError ? (
 									<p style={{ color: "red" }}>{nftError}</p>
@@ -647,7 +647,7 @@ const Dashboard = () => {
 												View All
 											</Link>
 										) : (
-											<p className='text-center mt-5 mb-5 pb-3'>''</p>
+											""
 										)}
 
 										<h4 className='mt-0 header-title mb-4'>
@@ -671,12 +671,12 @@ const Dashboard = () => {
 														// {txn?.length <= 0 ? (
 														<tr>
 															<td colSpan={7}>
-																<p
+																<h5
 																	className='text-center mt-3 mb-0'
 																	style={{ color: "#c95959" }}
 																>
 																	Sorry! No response was received from OpenSea!
-																</p>
+																</h5>
 															</td>
 														</tr>
 													) : txnLoading ? (
