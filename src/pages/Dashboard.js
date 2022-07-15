@@ -113,6 +113,7 @@ const Dashboard = () => {
 
 	console.log("how to txn", txn)
 	console.log("how to txnLoading", txnLoading)
+	console.log("how to !txnData", txnData)
 
 	const getTransection = () => {
 		setTxnLoading(true)
@@ -130,7 +131,7 @@ const Dashboard = () => {
 				setTxnLoading(false)
 			})
 			.catch(function (error) {
-				setTxnLoading(true)
+				// setTxnLoading(true)
 				setTxn(txnData)
 				console.log("Txn data display from redux")
 				setTxnLoading(false)
@@ -672,7 +673,7 @@ const Dashboard = () => {
 												</thead>
 												<tbody>
 													{txn?.length <= 0 &&
-													!txnData &&
+													txnData &&
 													txnLoading === false ? (
 														// {txn?.length <= 0 ? (
 														<tr>
@@ -776,7 +777,9 @@ const Dashboard = () => {
 													{/* {txn?.length <= 0 &&
 													txnData.length <= 0 &&
 													txnLoading === false ? ( */}
-													{txn?.length <= 0 && nftLoading === false ? (
+													{txn?.length <= 0 &&
+													!txnData &&
+													nftLoading === false ? (
 														<tr>
 															<td colSpan={7} style={{ border: "none" }}>
 																<p className='text-center mb-3'>
