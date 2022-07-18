@@ -518,9 +518,8 @@ return (
 								<div className='common-loader'>
 									<Loading type='spin' color='#ffab2d' height={30} width={30} />
 								</div>
-							) : nft?.length <= 0 &&
-							  nftData?.length <= 0 &&
-							  nftLoading === false ? (
+							) : // ) : nft?.length <= 0 &&
+							nftData?.length <= 0 && nftLoading === false ? (
 								<div className='col-md-12'>
 									<h5
 										className='text-center mt-3 mb-0 danger'
@@ -609,9 +608,8 @@ return (
 									})
 							)}
 						</div>
-						{nft?.length <= 0 &&
-						nftData?.length <= 0 &&
-						nftLoading === false ? (
+						{/* {nft?.length <= 0 && */}
+						{nftData?.length <= 0 && nftLoading === false ? (
 							<p className='text-center mt-5 mb-5 pb-3'>
 								<button
 									// to='portfolio'
