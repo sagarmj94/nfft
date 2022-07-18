@@ -87,8 +87,8 @@ const Navbar = () => {
 								<Link
 									to={"/invoices"}
 									className='waves-effect'
-									// data-toggle='modal'
-									// data-target='#comingsoon'
+									data-toggle='modal'
+									data-target='#comingsoon'
 								>
 									{/* <!-- <img src="assets/images/invoices-menu-ic.png">    -->  */}
 									<i className='ti-receipt'></i>
