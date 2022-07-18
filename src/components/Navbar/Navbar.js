@@ -39,7 +39,12 @@ const Navbar = () => {
 								</Link>
 							</li>
 							<li>
-								<Link to={"/mywallet"} className='waves-effect'>
+								<Link
+									to={"/mywallet"}
+									className='waves-effect'
+									data-toggle='modal'
+									data-target='#comingsoon'
+								>
 									{/* <!-- <img src="assets/images/wallet-menu-ic.png">     --> */}
 									<i className='ti-wallet'></i>
 									<span>My Wallet</span>
