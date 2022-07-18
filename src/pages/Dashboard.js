@@ -71,11 +71,12 @@ const getTopCollectionData = () => {
 			setIsCollLoading(false)
 		})
 		.catch(function (error) {
-			setColData(colectData)
+			// setIsCollLoading(true)
+			// setColData(colectData)
 			setIsCollLoading(false)
 			console.log("collection data display from redux")
 			// setIsError(error.message)
-			setIsError("Something went wrong try again !")
+			// setIsError("Something went wrong try again !")
 		})
 }
 
@@ -391,9 +392,10 @@ return (
 															</div>
 														</td>
 													</tr>
-												) : colData?.length <= 0 &&
-												  colectData?.length <= 0 &&
-												  isCollLoading === false ? (
+												) : // ) : colData?.length <= 0 &&
+												colectData?.length <= 0 &&
+												  setIsCollLoading === false ? (
+													//   setIsCollLoading === false ? (
 													<tr>
 														<td colSpan={7}>
 															<h5
@@ -404,9 +406,9 @@ return (
 															</h5>
 														</td>
 													</tr>
-												) : isError ? (
-													<p style={{ color: "red" }}>{isError}</p>
 												) : (
+													// ) : isError ? (
+													// 	<p style={{ color: "red" }}>{isError}</p>
 													Array.isArray(colData) &&
 													colData
 														?.sort(
